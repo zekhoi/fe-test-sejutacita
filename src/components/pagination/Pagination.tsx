@@ -23,6 +23,7 @@ const Pagination = ({
   for (let i = 1; i <= Math.ceil(totalBooks / booksPerPage); i++) {
     pages.push(i);
   }
+  console.log(pages);
   return (
     <ul
       className={clsx("inline-flex items-center space-x-1", {
@@ -35,7 +36,7 @@ const Pagination = ({
           className={clsx(
             "inline-flex md:px-4 md:py-2 px-3 py-1.5 text-xs md:text-sm leading-tight rounded-l-md border cursor-pointer",
             "text-gray-500 bg-white hover:bg-gelap-400 hover:text-white",
-            { ["hidden"]: currentPage <= pages[1] }
+            { ["hidden"]: currentPage <= pages[0] }
           )}
         >
           <HiChevronLeft className="w-4 h-4" />
@@ -48,7 +49,7 @@ const Pagination = ({
             "inline-flex md:px-4 md:py-2 px-3 py-1.5 text-xs md:text-sm leading-tight border cursor-pointer",
             "text-gray-500 bg-white hover:bg-gelap-400 hover:text-white",
             {
-              ["hidden"]: currentPage <= pages[1],
+              ["hidden"]: currentPage <= pages[0],
             }
           )}
         >
@@ -98,7 +99,7 @@ const Pagination = ({
             "inline-flex md:px-4 md:py-2 px-3 py-1.5 text-xs md:text-sm leading-tight border cursor-pointer",
             "text-gray-500 bg-white hover:bg-gelap-400 hover:text-white",
             {
-              ["hidden"]: currentPage >= pages[pages.length - 2],
+              ["hidden"]: currentPage >= pages[pages.length - 1],
             }
           )}
         >
@@ -112,7 +113,7 @@ const Pagination = ({
             "inline-flex md:px-4 md:py-2 px-3 py-1.5 text-xs md:text-sm leading-tight border rounded-r-md cursor-pointer",
             "text-gray-500 bg-white hover:bg-gelap-400 hover:text-white",
             {
-              ["hidden"]: currentPage >= pages[pages.length - 2],
+              ["hidden"]: currentPage >= pages[pages.length - 1],
             }
           )}
         >

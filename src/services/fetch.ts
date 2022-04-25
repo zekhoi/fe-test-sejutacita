@@ -2,7 +2,7 @@ import axios from "axios";
 import { BookAPI } from "@/types/api";
 
 const axiosInstance = axios.create({
-  baseURL: process.env.API_URL,
+  baseURL: process.env.DOMAIN_HOST,
 });
 
 const fetchBooks = async ({ categoryId, page, size }: BookAPI) => {
