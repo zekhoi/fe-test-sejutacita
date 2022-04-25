@@ -33,7 +33,7 @@ const Pagination = ({
         <a
           onClick={() => paginate(currentPage - 1)}
           className={clsx(
-            "inline-flex px-4 py-2 text-sm leading-tight rounded-l-md border cursor-pointer",
+            "inline-flex md:px-4 md:py-2 px-3 py-1.5 text-xs md:text-sm leading-tight rounded-l-md border cursor-pointer",
             "text-gray-500 bg-white hover:bg-gelap-400 hover:text-white",
             { ["hidden"]: currentPage <= pages[1] }
           )}
@@ -45,7 +45,7 @@ const Pagination = ({
         <a
           onClick={() => paginate(pages[0])}
           className={clsx(
-            "inline-flex px-4 py-2 text-sm leading-tight border cursor-pointer",
+            "inline-flex md:px-4 md:py-2 px-3 py-1.5 text-xs md:text-sm leading-tight border cursor-pointer",
             "text-gray-500 bg-white hover:bg-gelap-400 hover:text-white",
             {
               ["hidden"]: currentPage <= pages[1],
@@ -60,7 +60,7 @@ const Pagination = ({
         <a
           onClick={() => paginate(currentPage - 1)}
           className={clsx(
-            "inline-flex px-4 py-2 text-sm leading-tight border cursor-pointer",
+            "inline-flex md:px-4 md:py-2 px-3 py-1.5 text-xs md:text-sm leading-tight border cursor-pointer",
             "text-gray-500 bg-white hover:bg-gelap-400 hover:text-white",
             { ["hidden"]: currentPage === pages[0] }
           )}
@@ -71,7 +71,7 @@ const Pagination = ({
       <li>
         <a
           className={clsx(
-            "px-4 py-2 text-sm leading-tight border",
+            "md:px-4 md:py-2 px-3 py-1.5 text-xs md:text-sm leading-tight border",
             "text-white bg-gelap-500",
             { ["hidden"]: totalBooks <= booksPerPage }
           )}
@@ -83,7 +83,7 @@ const Pagination = ({
         <a
           onClick={() => paginate(currentPage + 1)}
           className={clsx(
-            "inline-flex px-4 py-2 text-sm leading-tight border cursor-pointer",
+            "inline-flex md:px-4 md:py-2 px-3 py-1.5 text-xs md:text-sm leading-tight border cursor-pointer",
             "text-gray-500 bg-white hover:bg-gelap-400 hover:text-white",
             { ["hidden"]: currentPage === pages[pages.length - 1] }
           )}
@@ -95,7 +95,7 @@ const Pagination = ({
         <a
           onClick={() => paginate(pages[pages.length - 1])}
           className={clsx(
-            "inline-flex px-4 py-2 text-sm leading-tight border cursor-pointer",
+            "inline-flex md:px-4 md:py-2 px-3 py-1.5 text-xs md:text-sm leading-tight border cursor-pointer",
             "text-gray-500 bg-white hover:bg-gelap-400 hover:text-white",
             {
               ["hidden"]: currentPage >= pages[pages.length - 2],
@@ -109,7 +109,7 @@ const Pagination = ({
         <a
           onClick={() => paginate(currentPage + 1)}
           className={clsx(
-            "inline-flex px-4 py-2 text-sm leading-tight border rounded-r-md cursor-pointer",
+            "inline-flex md:px-4 md:py-2 px-3 py-1.5 text-xs md:text-sm leading-tight border rounded-r-md cursor-pointer",
             "text-gray-500 bg-white hover:bg-gelap-400 hover:text-white",
             {
               ["hidden"]: currentPage >= pages[pages.length - 2],
