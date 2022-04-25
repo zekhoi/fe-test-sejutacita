@@ -16,7 +16,7 @@ export default function Navlink({ url, children }: NavLinkProps) {
       <Link href={url} passHref>
         <a
           className={clsx(
-            "block py-2 pr-4 pl-3 text-white font-semibold bg-gelap-500 md:bg-transparent border-b-2 hover:border-gelap-500 md:text-gelap-500 md:p-0",
+            "block py-2 pr-4 pl-3 text-gelap-700 font-semibold bg-white border-b-2 hover:border-gelap-500  md:p-0",
             {
               ["border-gelap-500"]: currentPath === url,
               ["border-transparent"]: currentPath !== url,

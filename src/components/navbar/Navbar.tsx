@@ -14,7 +14,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="px-2 py-6 bg-white border-gray-200">
+    <nav
+      className={clsx(
+        "px-2 pb-4 py-6 bg-white border-gray-200 md:shadow-none",
+        {
+          ["shadow"]: openMenu,
+        }
+      )}
+    >
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link href="/" passHref>
           <a className="flex items-center">
