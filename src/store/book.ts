@@ -1,7 +1,6 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchBooks } from "@/services/fetch";
 import { BookState, Book } from "@/types/book";
-import books from "@/pages/explore/books";
 
 const initialState: BookState = {
   books: [],
