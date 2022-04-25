@@ -5,7 +5,7 @@ import { BookState, Book } from "@/types/book";
 const initialState: BookState = {
   books: [],
   books_to_show: [],
-  isReady: false,
+  isReady: true,
   pagination: {
     keyword: "",
     book_per_page: 12,
@@ -18,17 +18,17 @@ const bookSlice = createSlice({
   initialState,
   reducers: {
     setLoading(state) {
-      if (!state.isReady) {
-        state.isReady = true;
+      if (state.isReady) {
+        state.isReady = false;
       }
     },
     receive(state, action: PayloadAction<any[]>) {
-      if (state.isReady) {
+      if (!state.isReady) {
         const books = action.payload;
         for (const key of books) {
           state.books[key.id] = key;
         }
-        state.isReady = false;
+        state.isReady = true;
       }
     },
     removeBooks(state) {
@@ -36,7 +36,7 @@ const bookSlice = createSlice({
     },
     searchBook(state, action: PayloadAction<{ keyword: string }>) {
       state.pagination.keyword = action.payload.keyword;
-      state.isReady = false;
+      state.isReady = true;
     },
     setPage(state, action: PayloadAction<{ page: number }>) {
       state.pagination.current_page = action.payload.page;
