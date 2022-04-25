@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Deskripsi
 
-## Getting Started
+Repository ini merupakan hasil dari test Coding Technical dari [SejutaCita](https://sejutacita.id) dalam rangka perekrutan magang Frontend Developer - ReactJS.
 
-First, run the development server:
+# Tools
 
-```bash
-npm run dev
-# or
-yarn dev
+Website ini dibuat dengan menggunakan [React.JS](https://reactjs.org/) dengan bantuan [Next.JS](https://nextjs.org/) sebagai framework, styling menggunakan [TailwindCSS](https://tailwindcss.com/) dan bantuan [clsx](https://www.npmjs.com/package/clsx) untuk styling secara kondisional, serta [Axios](https://axios-http.com/) untuk mengkonsumsi API.
+
+# Penggunaan
+
+Konfigurasi `.env`
+
+```env
+DOMAIN_HOST="https://domain.anda"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Lalu jalankan perintah:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn install && yarn dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+atau
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npm install && npm run dev
+```
 
-## Learn More
+# Masalah
 
-To learn more about Next.js, take a look at the following resources:
+Terdapat masalah saat mengkonsumsi API, yaitu terjadi CORS (Cross-Origin Resource Sharing) error karena tidak mengkonsumsi API dari server yang sama (lintas server / domain). Hal ini terjadi karena konfigurasi dari Backend yang kurang.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Penyelesaian Masalah
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Masalah dapat diselesaikan dengan beberapa cara seperti misalnya konfigurasi CORS pada Backend, namun dalam hal ini saya menggunakan pengaturan proxy karena tidak memiliki akses di Backend.
 
-## Deploy on Vercel
+Karena saya menggunakan NextJS maka penyelesaiannya adalah membuat konfigurasi `rewrites` di file `next.config.js` dengan destinasi ke url API yang bermasalah tadi.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Saran
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Dari masalah CORS tersebut maka disarankan kepada pihak Backend untuk mengkonfigurasi CORS terlebih dahulu agar dapat dikonsumsi oleh tim Frontend dan agar tidak terjadi masalah serupa dikemudian hari.
+
+# Referensi
+
+- [CORS errors](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors)
+- [Rewrites - NextJS](https://nextjs.org/docs/api-reference/next.config.js/rewrites).

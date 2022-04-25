@@ -17,12 +17,12 @@ const bookSlice = createSlice({
   name: "book",
   initialState,
   reducers: {
-    setLoading(state) {
+    setLoading: (state) => {
       if (state.isReady) {
         state.isReady = false;
       }
     },
-    receive(state, action: PayloadAction<any[]>) {
+    receive: (state, action: PayloadAction<any[]>) => {
       if (!state.isReady) {
         const books = action.payload;
         for (const key of books) {
@@ -31,14 +31,14 @@ const bookSlice = createSlice({
         state.isReady = true;
       }
     },
-    removeBooks(state) {
+    removeBooks: (state) => {
       state.books = [];
     },
-    searchBook(state, action: PayloadAction<{ keyword: string }>) {
+    searchBook: (state, action: PayloadAction<{ keyword: string }>) => {
       state.pagination.keyword = action.payload.keyword;
       state.isReady = true;
     },
-    setPage(state, action: PayloadAction<{ page: number }>) {
+    setPage: (state, action: PayloadAction<{ page: number }>) => {
       state.pagination.current_page = action.payload.page;
     },
   },
