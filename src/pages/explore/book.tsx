@@ -18,7 +18,7 @@ const BookDetails = () => {
   const [isBookmarked, setIsBookmarked] = useState(false);
   useEffect(() => {
     if (!router.isReady) return;
-    if (!id) {
+    if (!id || !thisBook) {
       setIsLoading(true);
       router.push("/explore");
       return;
@@ -28,7 +28,7 @@ const BookDetails = () => {
       setIsBookmarked(true);
     }
     setIsLoading(false);
-  }, [id, thisBook.id, router]);
+  }, [id, thisBook, router]);
 
   return (
     <>
