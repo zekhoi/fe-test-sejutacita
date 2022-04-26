@@ -5,7 +5,7 @@ const axiosInstance = axios.create({
   baseURL: process.env.DOMAIN_HOST,
 });
 
-const fetchBooks = async ({ categoryId, page, size }: BookAPI) => {
+const fetchBooks = async ({ categoryId }: BookAPI) => {
   try {
     const response = await axiosInstance.get("/books", {
       params: {
