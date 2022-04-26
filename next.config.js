@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    API_URL: process.env.DOMAIN_HOST,
+    DOMAIN_HOST: process.env.DOMAIN_HOST,
   },
   async rewrites() {
     return [
