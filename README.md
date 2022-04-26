@@ -1,10 +1,20 @@
 # Deskripsi
 
-Repository ini merupakan hasil dari test Coding Technical dari [SejutaCita](https://sejutacita.id) dalam rangka perekrutan magang Frontend Developer - ReactJS.
-
-# Tools
-
 Website ini dibuat dengan menggunakan [React.JS](https://reactjs.org/) dengan bantuan [Next.JS](https://nextjs.org/) sebagai framework, styling menggunakan [TailwindCSS](https://tailwindcss.com/) dan bantuan [clsx](https://www.npmjs.com/package/clsx) untuk styling secara kondisional, serta [Axios](https://axios-http.com/) untuk mengkonsumsi API.
+
+# Tugas
+
+- [x] Built using React.js and Typescript
+
+- [x] Responsive
+
+- [x] Pagination
+
+- [x] Local Bookmark
+
+- [x] Search Book
+
+- [x] Available in github.com
 
 # Penggunaan
 
