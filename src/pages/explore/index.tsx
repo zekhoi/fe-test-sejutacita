@@ -30,7 +30,7 @@ import { CategoryState } from "@/types/category";
 
 const Explore: NextPage = () => {
   const dispatch = useDispatch();
-  const { categories } = useSelector((state: any) => state.category);
+  const { categories, isLoading } = useSelector((state: any) => state.category);
   const {
     isReady,
     pagination: { book_per_page, current_page },
@@ -93,10 +93,16 @@ const Explore: NextPage = () => {
                       }
                     />
                   ))
-                ) : (
+                ) : isLoading ? (
                   <SkeletonList name="categorybox" total={6}>
                     <Box />
                   </SkeletonList>
+                ) : (
+                  <div className="w-full col-span-6 py-6 text-center">
+                    <span className="font-semibold text-center text-gelap-700 col-span-full">
+                      No Item
+                    </span>
+                  </div>
                 )}
               </div>
             </div>

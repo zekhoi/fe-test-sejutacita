@@ -5,7 +5,7 @@ import { BookState, Book } from "@/types/book";
 const initialState: BookState = {
   books: [],
   books_to_show: [],
-  isReady: true,
+  isReady: false,
   pagination: {
     keyword: "",
     book_per_page: 12,
