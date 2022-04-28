@@ -13,7 +13,7 @@ type BookCardProps = {
 const BookCard = ({ id, category, title, author, coverUrl }: BookCardProps) => {
   return (
     <Link href={`/explore/book?id=${id}`} passHref>
-      <div className="max-w-[200px] min-h-max rounded-lg cursor-pointer">
+      <div className="max-w-[200px] min-h-max rounded-lg cursor-pointer mx-auto">
         <div className="relative">
           <img
             className="border rounded-lg shadow-md"
