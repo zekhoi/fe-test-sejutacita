@@ -11,5 +11,5 @@ export interface CategoryState {
 
 export interface InitialCategoryState {
   categories: Category[];
-  isReady: boolean;
+  isLoading: boolean;
 }

@@ -11,7 +11,7 @@ import { StoreState } from "@/types/store";
 
 const initialState: InitialCategoryState = {
   categories: [],
-  isReady: false,
+  isLoading: true,
 };
 
 const categorySlice = createSlice({
@@ -19,24 +19,24 @@ const categorySlice = createSlice({
   initialState,
   reducers: {
     ready: (state) => {
-      if (!state.isReady) {
-        state.isReady = true;
+      if (!state.isLoading) {
+        state.isLoading = true;
       }
     },
     receive: (state, action: PayloadAction<CategoryState[]>) => {
-      if (state.isReady) {
+      if (state.isLoading) {
         state.categories = action.payload;
-        state.isReady = false;
+        state.isLoading = false;
       }
     },
     update: (state, action: PayloadAction<{ choose: number }>) => {
-      if (state.isReady) {
+      if (state.isLoading) {
         state.categories = state.categories.map(({ id, name }) => ({
           id,
           name,
           isActive: id === action.payload.choose ? true : false,
         }));
-        state.isReady = false;
+        state.isLoading = false;
       }
     },
   },
